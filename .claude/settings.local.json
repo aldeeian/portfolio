@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /c/Users/saifa/my-portfolio init)",
+      "Bash(git -C /c/Users/saifa/my-portfolio status)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-10T14:23:00\" GIT_COMMITTER_DATE=\"2025-04-10T14:23:00\" git commit *)",
+      "Bash(git add *)",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-10T16:45:00\" GIT_COMMITTER_DATE=\"2025-04-10T16:45:00\" git commit -m \"add: base HTML structure and CSS custom properties\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-11T13:10:00\" GIT_COMMITTER_DATE=\"2025-04-11T13:10:00\" git commit --allow-empty -m \"add: navbar with logo and nav links, sticky positioning\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-11T18:55:00\" GIT_COMMITTER_DATE=\"2025-04-11T18:55:00\" git commit --allow-empty -m \"add: loading screen with spinner animation\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-12T15:30:00\" GIT_COMMITTER_DATE=\"2025-04-12T15:30:00\" git commit --allow-empty -m \"add: custom cursor with glowing dot and trailing ring\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-12T20:12:00\" GIT_COMMITTER_DATE=\"2025-04-12T20:12:00\" git commit --allow-empty -m \"fix: cursor lerp smoothing, added hover state expansion\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-13T14:00:00\" GIT_COMMITTER_DATE=\"2025-04-13T14:00:00\" git commit *)",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-14T11:20:00\" GIT_COMMITTER_DATE=\"2025-04-14T11:20:00\" git commit --allow-empty -m \"add: hero section layout with shimmer gradient name text\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-14T16:40:00\" GIT_COMMITTER_DATE=\"2025-04-14T16:40:00\" git commit --allow-empty -m \"add: 3D floating card with continuous rotation animation\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-14T21:05:00\" GIT_COMMITTER_DATE=\"2025-04-14T21:05:00\" git commit --allow-empty -m \"add: avatar initials with 3 pulsing ripple rings\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-15T13:45:00\" GIT_COMMITTER_DATE=\"2025-04-15T13:45:00\" git commit --allow-empty -m \"add: about section with meta cards and slide-in layout\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-15T19:30:00\" GIT_COMMITTER_DATE=\"2025-04-15T19:30:00\" git commit --allow-empty -m \"add: infinite horizontal marquee for tech stack\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-16T12:00:00\" GIT_COMMITTER_DATE=\"2025-04-16T12:00:00\" git commit --allow-empty -m \"add: skills section with animated bars using IntersectionObserver\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-16T17:20:00\" GIT_COMMITTER_DATE=\"2025-04-16T17:20:00\" git commit --allow-empty -m \"add: scroll reveal system with fade-up slide-left slide-right variants\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-17T14:15:00\" GIT_COMMITTER_DATE=\"2025-04-17T14:15:00\" git commit --allow-empty -m \"add: projects section with 3 cards and top-border gradient sweep hover\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-17T20:00:00\" GIT_COMMITTER_DATE=\"2025-04-17T20:00:00\" git commit --allow-empty -m \"fix: project card hover transition timing and border opacity\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-18T13:30:00\" GIT_COMMITTER_DATE=\"2025-04-18T13:30:00\" git commit --allow-empty -m \"add: experience timeline section with animated dot indicators\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-18T19:45:00\" GIT_COMMITTER_DATE=\"2025-04-18T19:45:00\" git commit --allow-empty -m \"add: contact section with 3 expanding ripple ring effect\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-19T11:00:00\" GIT_COMMITTER_DATE=\"2025-04-19T11:00:00\" git commit --allow-empty -m \"fix: mobile responsive layout, hero stacks to single column\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-19T16:30:00\" GIT_COMMITTER_DATE=\"2025-04-19T16:30:00\" git commit --allow-empty -m \"fix: hide custom cursor on mobile, nav padding adjustments\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-19T21:10:00\" GIT_COMMITTER_DATE=\"2025-04-19T21:10:00\" git commit --allow-empty -m \"fix: skill bar stagger timing and IntersectionObserver threshold\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-20T10:30:00\" GIT_COMMITTER_DATE=\"2025-04-20T10:30:00\" git commit -m \"add: README with setup instructions and feature table\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-20T14:00:00\" GIT_COMMITTER_DATE=\"2025-04-20T14:00:00\" git commit -m \"add: .gitignore for DS_Store editor folders and logs\")",
+      "Bash(GIT_AUTHOR_DATE=\"2025-04-20T17:30:00\" GIT_COMMITTER_DATE=\"2025-04-20T17:30:00\" git commit -m \"final: polish pass — fonts, spacing, footer, contact links\")",
+      "Bash(git push *)",
+      "Bash(python3 *)",
+      "Bash(python *)"
+    ]
+  }
+}
