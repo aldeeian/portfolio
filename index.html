@@ -324,7 +324,7 @@
     /* ── PROJECTS ───────────────────────────── */
     .projects-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
+      gap: 1.5rem; margin-top: 3rem; align-items: start;
     }
     .project-card {
       background: var(--card); border: 1px solid var(--border);
@@ -349,12 +349,23 @@
       border-radius: 6px; font-size: 0.75rem; color: var(--accent);
       font-weight: 600; margin-bottom: 1rem;
     }
+    .project-card.featured {
+      border-color: rgba(0,212,255,0.35);
+      box-shadow: 0 0 0 1px rgba(0,212,255,0.12), 0 12px 40px rgba(0,212,255,0.08);
+    }
+    .featured-badge {
+      display: inline-block; padding: 0.25rem 0.7rem; margin-right: 0.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; border-radius: 6px; font-size: 0.7rem;
+      font-weight: 700; letter-spacing: 0.05em; vertical-align: middle;
+    }
+    .project-note { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
     .project-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; }
     .project-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
     .project-bullets { list-style: none; margin-bottom: 1.5rem; }
     .project-bullets li {
-      font-size: 0.82rem; color: var(--muted);
-      padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.5;
+      font-size: 0.9rem; color: var(--muted);
+      padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.55;
     }
     .project-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
     .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
@@ -388,6 +399,7 @@
       padding: 0.25rem 0 0.25rem 1.2rem; position: relative; line-height: 1.6;
     }
     .timeline-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.3rem; }
+    .timeline-bullets.lg li { font-size: 0.95rem; }
 
     /* ── CONTACT ────────────────────────────── */
     #contact { text-align: center; }
@@ -482,7 +494,7 @@
       <div class="hero-left">
         <div class="hero-tag">Available for Co-op · 2026</div>
         <h1 class="hero-name">MD Saif Aldeen</h1>
-        <div class="hero-role">4th-year CS @ University of Calgary &nbsp;/&nbsp; Software Engineering · Co-op Program</div>
+        <div class="hero-role">IT Intern @ Lactalis Canada &nbsp;/&nbsp; 4th-year CS @ University of Calgary</div>
         <p class="hero-bio">
           I'm a 4th-year CS student at UCalgary building full-stack and ML projects in my free time.
           Currently hunting for co-op opportunities where I can ship real code and learn from experienced engineers.
@@ -503,7 +515,7 @@
                 <div class="stat-label">Year</div>
               </div>
               <div class="stat-item">
-                <div class="stat-value">5+</div>
+                <div class="stat-value">7+</div>
                 <div class="stat-label">Projects</div>
               </div>
               <div class="stat-item">
@@ -616,6 +628,11 @@
       </div>
     </div>
     <div class="skill-pills reveal fade-up">
+      <span class="pill">Go</span>
+      <span class="pill">Next.js</span>
+      <span class="pill">MLflow</span>
+      <span class="pill">Supabase</span>
+      <span class="pill">Render</span>
       <span class="pill">LangChain</span>
       <span class="pill">FastAPI</span>
       <span class="pill">FAISS</span>
@@ -673,8 +690,86 @@
     <h2 class="section-title">Recent <span>Projects</span></h2>
     <div class="projects-grid">
 
-      <div class="project-card reveal fade-up">
-        <div class="project-tag">Jan 2026 – Present</div>
+      <div class="project-card featured reveal fade-up">
+        <span class="featured-badge">★ FEATURED</span>
+        <span class="project-tag">Jul 2026 · Live in Production</span>
+        <h3>Transit Monitor — Calgary Transit Alerts</h3>
+        <p>A real-time Calgary Transit disruption monitor. It polls the city's GTFS-realtime feed, turns messy HTML service alerts into plain-language events, and emails riders when their route is affected.</p>
+        <ul class="project-bullets">
+          <li>Go service ingests GTFS-realtime alerts, diffs new / updated / resolved events, and persists them to Postgres</li>
+          <li>Read-only REST API + Next.js dashboard with live/stale/offline health and per-route history charts</li>
+          <li>Double opt-in email alerts with dedup and rate limiting; a transactional claim log prevents duplicate sends on restart</li>
+          <li>Deployed end-to-end: Dockerized Go backend on Render, Supabase Postgres, Vercel dashboard, CI blueprint deploys</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag">Go</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">Render</span>
+          <span class="stack-tag">Supabase</span>
+          <span class="stack-tag">Vercel</span>
+        </div>
+        <div class="project-links">
+          <a href="https://transit-monitor.vercel.app" class="project-link" target="_blank">→ Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card featured reveal fade-up">
+        <span class="featured-badge">★ FEATURED</span>
+        <span class="project-tag">Aug 2026</span>
+        <h3>HELIOS — Forecasting &amp; Variance Platform</h3>
+        <p>An end-to-end operational forecasting and budget-variance analytics platform. It simulates three years of enterprise workforce and finance data, then carries it from messy source ingestion through ML forecasting, MLOps monitoring, and a natural-language query agent.</p>
+        <ul class="project-bullets">
+          <li>Data-quality reconciliation engine: quarantine with reason codes, double-count and period-gap detection across three lossy sources</li>
+          <li>Star-schema warehouse with Type&nbsp;2 SCD feeding SARIMA / Prophet / XGBoost forecasts, rolling-origin backtesting, and MLflow tracking</li>
+          <li>Budget-vs-actual variance with volume / mix / rate decomposition; drift monitoring (PSI &amp; KS) with champion–challenger retraining</li>
+          <li>Guardrailed natural-language SQL agent, FastAPI service, Power BI dashboard, Docker + Azure Bicep + CI; 157 passing tests</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">XGBoost</span>
+          <span class="stack-tag">SARIMA</span>
+          <span class="stack-tag">MLflow</span>
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">SQL</span>
+          <span class="stack-tag">Power BI</span>
+          <span class="stack-tag">Docker</span>
+        </div>
+        <div class="project-links">
+          <span class="project-note">Private repo · code &amp; demo available on request</span>
+        </div>
+      </div>
+
+      <div class="project-card featured reveal fade-up">
+        <span class="featured-badge">★ FEATURED</span>
+        <span class="project-tag">2026 · Real-Time AI</span>
+        <h3>InterviewOS — Live Meeting Copilot</h3>
+        <p>A real-time interview and meeting copilot. It captures your mic and the meeting tab's audio, transcribes both live, detects the question being asked, and streams answer suggestions on the fly.</p>
+        <ul class="project-bullets">
+          <li>Streams microphone + shared meeting-tab audio to Deepgram's live WebSocket for real-time transcription</li>
+          <li>Streams answer suggestions through a provider fallback chain (OpenAI → Gemini → Claude → local heuristic)</li>
+          <li>Rolling transcript summarization, detected-question extraction, and named context profiles for tailored answers</li>
+          <li>Session recap, Markdown export, and live mic/tab audio level meters</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">Deepgram</span>
+          <span class="stack-tag">OpenAI</span>
+          <span class="stack-tag">Gemini</span>
+          <span class="stack-tag">Claude</span>
+          <span class="stack-tag">Vercel</span>
+        </div>
+        <div class="project-links">
+          <span class="project-note">Private repo · demo available on request</span>
+        </div>
+      </div>
+
+      <div class="project-card featured reveal fade-up">
+        <span class="featured-badge">★ FEATURED</span>
+        <span class="project-tag">Jan 2026 – Present</span>
         <h3>ChatPDF: RAG Web App</h3>
         <p>Upload any PDF and ask questions in plain English. Answers are grounded in the document; nothing is hallucinated.</p>
         <ul class="project-bullets">
@@ -718,25 +813,6 @@
         </div>
       </div>
 
-      <div class="project-card reveal fade-up">
-        <div class="project-tag">In Progress</div>
-        <h3>PDG Builder</h3>
-        <p>A program dependency graph builder for static analysis; parses source code and visualizes data and control flow dependencies between statements.</p>
-        <ul class="project-bullets">
-          <li>Parses source code into structured dependency nodes and edges</li>
-          <li>Visualizes control flow and data flow for static analysis use cases</li>
-          <li>Relevant for compiler optimization research and code quality tooling</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">Static Analysis</span>
-          <span class="stack-tag">Graph Theory</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/aldeeani" class="project-link" target="_blank">→ GitHub</a>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -745,6 +821,19 @@
     <div class="section-label">Where I've Worked</div>
     <h2 class="section-title">Experience &amp; <span>Leadership</span></h2>
     <div class="timeline">
+
+      <div class="timeline-item reveal slide-left">
+        <div class="timeline-period">Incoming · Sep 2026</div>
+        <div class="timeline-role">IT Intern, SAP BASIS Team</div>
+        <div class="timeline-company">Lactalis Canada · Toronto (Hybrid)</div>
+        <ul class="timeline-bullets lg">
+          <li>Supporting the SAP BASIS team with day-to-day system administration, documentation, and operational follow-up across enterprise SAP environments</li>
+          <li>Assisting with the deployment, testing, and employee onboarding of the SecurePro security tool</li>
+          <li>Coordinating access management, security-related activities, and compliance documentation, and maintaining SOPs and user guides for SAP BASIS processes</li>
+          <li>Reviewing support and administrative processes to identify automation, improved tracking, and reduced manual effort</li>
+          <li>Building data collection, reporting, and dashboards to improve visibility into SAP BASIS workload, tickets, and project status</li>
+        </ul>
+      </div>
 
       <div class="timeline-item reveal slide-left">
         <div class="timeline-period">Oct 2024 – Present</div>
@@ -808,7 +897,7 @@
 </main>
 
 <footer>
-  <p><span>MD Saif Aldeen</span> · Built with pure HTML, CSS &amp; JS · No frameworks · 2025</p>
+  <p><span>MD Saif Aldeen</span> · Built with pure HTML, CSS &amp; JS · No frameworks · 2026</p>
 </footer>
 
 <script>
